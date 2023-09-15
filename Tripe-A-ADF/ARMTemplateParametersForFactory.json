@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Tripe-A-ADF"
+		},
+		"EXP_SqlServer_connectionString": {
+			"value": "Integrated Security=True;Data Source=TL327;Initial Catalog=ExportAdventureWorks2017"
+		},
+		"EXP_SqlServer_password": {
+			"value": ""
+		},
+		"SqlServer1_connectionString": {
+			"value": "Integrated Security=True;Data Source=TL327;Initial Catalog=AdventureWorks2017"
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"ls_Triple_A_DB_connectionString": {
+			"value": ""
+		},
+		"EXP_SqlServer_properties_typeProperties_userName": {
+			"value": "TECHNOVERT\\rakesh.p"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "TECHNOVERT\\rakesh.p"
+		}
+	}
+}

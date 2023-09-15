@@ -1,0 +1,93 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "Tripe-A-ADF"
+		},
+		"EXP_SqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'EXP_SqlServer'",
+			"defaultValue": "Integrated Security=True;Data Source=TL327;Initial Catalog=ExportAdventureWorks2017"
+		},
+		"EXP_SqlServer_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'EXP_SqlServer'"
+		},
+		"SqlServer1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer1'",
+			"defaultValue": "Integrated Security=True;Data Source=TL327;Initial Catalog=AdventureWorks2017"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"ls_Triple_A_DB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_Triple_A_DB'"
+		},
+		"EXP_SqlServer_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "TECHNOVERT\\rakesh.p"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "TECHNOVERT\\rakesh.p"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "Tripe-A-ADF_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_Triple_A_DB_connectionString": {
+						"value": "[parameters('ls_Triple_A_DB_connectionString')]"
+					},
+					"EXP_SqlServer_connectionString": {
+						"value": "[parameters('EXP_SqlServer_connectionString')]"
+					},
+					"EXP_SqlServer_password": {
+						"value": "[parameters('EXP_SqlServer_password')]"
+					},
+					"SqlServer1_connectionString": {
+						"value": "[parameters('SqlServer1_connectionString')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"EXP_SqlServer_properties_typeProperties_userName": {
+						"value": "[parameters('EXP_SqlServer_properties_typeProperties_userName')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
