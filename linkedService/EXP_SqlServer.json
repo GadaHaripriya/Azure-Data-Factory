@@ -1,0 +1,17 @@
+{
+	"name": "EXP_SqlServer",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=TL327;initial catalog=ExportAdventureWorks2017",
+			"userName": "TECHNOVERT\\rakesh.p",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiMzk4ZGVhNS1jOTUwLTRlZGMtYjAyZC00YWY2NzFiOWY5NzciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SQLServerintegrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

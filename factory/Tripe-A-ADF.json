@@ -1,0 +1,9 @@
+{
+	"name": "Tripe-A-ADF",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "74c1d7f6-993f-4b8d-8fc7-48194562bd5f",
+		"tenantId": "865cc515-a530-4538-8ef8-072b7b2be759"
+	}
+}
